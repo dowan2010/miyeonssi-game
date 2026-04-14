@@ -27,6 +27,9 @@ const app = express()
 const PgStore = connectPgSimple(session)
 const CLIENT_URL = process.env.CLIENT_URL ?? 'http://localhost:5173'
 
+// Render 등 리버스 프록시 뒤에서 HTTPS 세션 쿠키가 정상 동작하도록
+app.set('trust proxy', 1)
+
 app.use(cors({ origin: CLIENT_URL, credentials: true }))
 app.use(express.json())
 
@@ -38,6 +41,7 @@ app.use(
     saveUninitialized: false,
     cookie: {
       secure: process.env.NODE_ENV === 'production',
+      sameSite: process.env.NODE_ENV === 'production' ? 'lax' : false,
       maxAge: 30 * 24 * 60 * 60 * 1000,
     },
   })
