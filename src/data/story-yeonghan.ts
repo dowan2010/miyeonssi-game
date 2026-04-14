@@ -49,7 +49,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'classroom',
     speaker: '김영한',
     expression: 'normal',
-    text: '…뭐야. 전학생이야? 그런 눈으로 쳐다보지 마.',
+    text: '…이런 거에서 많이들 오해하는데, 내가 눈 마주쳤다고 신경 쓰는 거 아니거든. 그냥 봤을 뿐이야.',
     next: 'intro_choice_01',
   },
   intro_choice_01: {
@@ -68,7 +68,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'classroom',
     speaker: '김영한',
     expression: 'shy',
-    text: '흥~ 그런 미소 보여봤자 안 넘어가거든? …사실 조금은 신경 쓰이긴 해.',
+    text: '흥~ 그런 미소 보여봤자 안 넘어가거든? …사실 나도 오래전부터 이런 타입 신경 쓰였어. 절대 말 안 했겠지만.',
     next: 'ch1_lunch',
   },
   intro_08_b: {
@@ -76,7 +76,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'classroom',
     speaker: '김영한',
     expression: 'normal',
-    text: '…뭐. 그런 거야 상관없어.',
+    text: '…쿨하네. 뭐, 네가 옆에 있는 거 나쁘진 않아. 일단은.',
     next: 'ch1_lunch',
   },
   intro_08_c: {
@@ -84,9 +84,10 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'classroom',
     speaker: '김영한',
     expression: 'surprised',
-    text: '…! 갑자기 손을 흔들면 어떡해. 여기서 포인트는 이런 거에 반응하면 지는 거라는 거야. …근데 뭔가 신선하긴 하네.',
+    text: '…! 여기서 포인트는 눈을 피하지 않는다는 거야. 그걸 알면서 한 거야, 아님 그냥 한 거야. …둘 다 마음에 들어서 짜증나.',
     next: 'ch1_lunch',
   },
+
   ch1_lunch: {
     id: 'ch1_lunch',
     background: 'classroom',
@@ -116,7 +117,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'classroom',
     speaker: '김영한',
     expression: 'embarrassed',
-    text: '…뭐, 어차피 자리 있으니까. 앉아. 결국에는 네가 여기까지 오게 돼 있었어.',
+    text: '…처음엔 다들 헷갈려하는데, 내가 "앉아도 돼"라고 한다고 좋아하는 거 아니거든. 그냥 자리 있으니까 앉으라는 거야.',
     next: 'ch1_lunch_a2',
     affectionDelta: 5,
   },
@@ -125,7 +126,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'classroom',
     speaker: '김영한',
     expression: 'normal',
-    text: '…이 도시락은 내가 신경 쓴다는 뜻이야. 굳이 말 안 해도 알지?',
+    text: '결국에는 네 마음이 나한테 오게 돼 있어. …이 도시락은 내가 신경 쓴다는 뜻이야. 굳이 말 안 해도 알지?',
     next: 'ch1_rooftop',
   },
   ch1_lunch_b: {
@@ -135,6 +136,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     text: '혼자 매점 빵을 들고 교실로 돌아왔다. 김영한은 이미 자리를 비웠다.',
     next: 'ch1_rooftop',
   },
+
   ch1_rooftop: {
     id: 'ch1_rooftop',
     background: 'rooftop',
@@ -154,7 +156,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'rooftop',
     speaker: '김영한',
     expression: 'surprised',
-    text: '…여기까지 올 줄은 몰랐는데. 딱히 기다린 건 아니야, 알지?',
+    text: '흥, 딱히 너 때문에 기다린 건 아니거든! …그냥 여기가 조용해서야. 오해하지 마.',
     next: 'ch1_rooftop_choice',
   },
   ch1_rooftop_choice: {
@@ -173,7 +175,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'rooftop',
     speaker: '김영한',
     expression: 'normal',
-    text: '그렇지. 조용해서 좋아. 여기서 포인트는 아무도 방해 안 한다는 거야. …너 빼고.',
+    text: '핵심은 여기는 아무도 안 온다는 거야. 조용해서 좋거든. …네가 오기 전까지는.',
     next: 'ch1_rooftop_a2',
   },
   ch1_rooftop_a2: {
@@ -181,7 +183,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'rooftop',
     speaker: '김영한',
     expression: 'shy',
-    text: '…너랑 있으면 날씨가 다 맑아 보여. 쉽게 말하면, 나쁘지 않다는 거야.',
+    text: '너랑 있으면 날씨가 다 맑아 보여. …쉽게 말하면 나쁘지 않다는 거야. 한번 해봐, 직접 느껴봐.',
     next: 'ch1_end',
     affectionDelta: 5,
   },
@@ -190,7 +192,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'rooftop',
     speaker: '김영한',
     expression: 'normal',
-    text: '…괜찮아. 어차피 혼자였으니까. 뭐, 네가 옆에 있는 거 나쁘진 않아.',
+    text: '그렇게 하면 안 돼. 왜냐하면 이제 막 재밌어지려던 참이거든. …뭐, 네가 옆에 있는 거 나쁘진 않아.',
     next: 'ch1_end',
   },
   ch1_rooftop_c: {
@@ -198,7 +200,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'rooftop',
     speaker: '김영한',
     expression: 'embarrassed',
-    text: '그, 그냥 노래야. 실제로는 엄청 부끄러운 노래거든. 알려줄 생각 없어.',
+    text: '그, 그냥 노래야. 이게 왜 중요하냐면… 아 됐어. 실제로는 엄청 부끄러운 노래거든. 알려줄 생각 없어.',
     next: 'ch1_rooftop_c2',
     affectionDelta: 5,
   },
@@ -207,10 +209,11 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'rooftop',
     speaker: '김영한',
     expression: 'shy',
-    text: '…마치 밤하늘의 별처럼 자꾸 눈에 들어오잖아. …이런 말 했다고 착각하지 마.',
+    text: '마치 밤하늘의 별처럼 자꾸 눈에 들어오잖아. …이런 말 했다고 착각하지 마. 여기까지 알겠어?',
     next: 'ch1_end',
     affectionDelta: 5,
   },
+
   ch1_end: {
     id: 'ch1_end',
     background: 'rooftop',
@@ -223,7 +226,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'rooftop',
     speaker: '김영한',
     expression: 'normal',
-    text: '자 그러면 오늘은 여기까지야. …내일도 볼 것 같은 느낌이 드는 건 기분 탓이겠지.',
+    text: '자 그러면 오늘은 여기까지야. …다시 한번 말해줄게. 나 기다린 거 아니야. 절대로.',
     next: 'ch1_end_03',
   },
   ch1_end_03: {
@@ -231,6 +234,6 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'black',
     speaker: '나레이터',
     text: '첫 번째 날이 저물었다.\n\n— Chapter 1 END —',
-    next: 'ch1_end_03',
+    // next 없음 → 챕터 완료 화면
   },
 }

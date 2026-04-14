@@ -68,6 +68,7 @@ export default function GameScreen({ onMenu }: Props) {
   const showCharacter = scene.speaker === '김영한' || scene.speaker === '뉴로우'
   const hasChoices = !!(scene.choices && scene.choices.length > 0)
   const hasContinue = !hasChoices && !!scene.next
+  const isChapterEnd = textDone && !hasChoices && !scene.next
 
   return (
     <div className={`relative w-full h-full overflow-hidden ${bgClass} transition-colors duration-1000 font-gothic`}>
@@ -130,6 +131,19 @@ export default function GameScreen({ onMenu }: Props) {
         hasContinue={hasContinue}
         onContinue={handleNext}
       />
+
+      {/* 챕터 완료 오버레이 */}
+      {isChapterEnd && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 gap-6">
+          <p className="text-white/70 text-sm tracking-widest">— 챕터 완료 —</p>
+          <button
+            onClick={async () => { await cloudSave(); onMenu() }}
+            className="px-8 py-3 border border-white/30 text-white/80 text-sm rounded hover:bg-white/10 transition-colors"
+          >
+            메뉴로 돌아가기
+          </button>
+        </div>
+      )}
     </div>
   )
 }
