@@ -80,6 +80,10 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = Number(process.env.PORT) || 3001
 
-initDb()
-  .then(() => app.listen(PORT, () => console.log(`🎮 서버 실행 중 :${PORT}`)))
-  .catch(console.error)
+// 서버를 먼저 올린 후 DB 초기화 — initDb 실패해도 502 안 뜨도록
+app.listen(PORT, () => {
+  console.log(`🎮 서버 실행 중 :${PORT}`)
+  initDb()
+    .then(() => console.log('[DB] 초기화 완료'))
+    .catch((err) => console.error('[DB] 초기화 실패 (서버는 유지):', err))
+})
