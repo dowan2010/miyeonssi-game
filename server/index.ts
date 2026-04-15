@@ -35,7 +35,13 @@ app.use(express.json())
 
 app.use(
   session({
-    store: new PgStore({ pool: pool as any, createTableIfMissing: true }),
+    store: new PgStore({
+      pool: pool as any,
+      createTableIfMissing: true,
+      // PgBouncer(pgbouncer=true) 환경에서 prepared statement 비활성화
+      disableTouch: false,
+      tableName: 'session',
+    }),
     secret: process.env.SESSION_SECRET ?? 'dev-secret-change-me',
     resave: false,
     saveUninitialized: false,
