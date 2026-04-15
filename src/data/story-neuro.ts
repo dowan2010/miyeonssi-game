@@ -4,11 +4,13 @@ import type { Scene } from '../types'
  * 뉴로우 — 활발계 러브 스토리
  * 성격: CSR에 진심인 학교 사회공헌 동아리 부장. 직선적이고 활발함.
  *       감정을 숨기지 못하고 솔직하게 드러내지만, 결정적 순간엔 당황.
- *       대화 중 자연스럽게 CSR 지식이 튀어나옴.
+ *       대화 중 자연스럽게 CSR/ESG 지식이 튀어나옴.
  */
 export const neuroScenes: Record<string, Scene> = {
 
-  // ─── 챕터 1: 컴퓨터실의 첫 만남 ─────────────────────────────────
+  // ═══════════════════════════════════════════════════
+  //  CHAPTER 1 — 컴퓨터실의 첫 만남
+  // ═══════════════════════════════════════════════════
   neuro_01: {
     id: 'neuro_01',
     background: 'black',
@@ -57,7 +59,6 @@ export const neuroScenes: Record<string, Scene> = {
       { text: '조용히 자리를 잡는다.', next: 'neuro_01c', affectionDelta: 0 },
     ],
   },
-
   neuro_01a: {
     id: 'neuro_01a',
     background: 'classroom',
@@ -92,8 +93,6 @@ export const neuroScenes: Record<string, Scene> = {
     text: '어, 어?! 무시당했어? 야— 야야야, 내 말 들었어?! CSR도 모르는 채로 지나치면 안 되는데!!',
     next: 'neuro_lunch_setup',
   },
-
-  // ─── 점심 제안 ───────────────────────────────────────────────────
   neuro_lunch_setup: {
     id: 'neuro_lunch_setup',
     background: 'classroom',
@@ -119,7 +118,6 @@ export const neuroScenes: Record<string, Scene> = {
       { text: '"오늘은 좀 피곤해서…"', next: 'neuro_lunch_no', affectionDelta: -5 },
     ],
   },
-
   neuro_lunch_yes: {
     id: 'neuro_lunch_yes',
     background: 'classroom',
@@ -137,8 +135,6 @@ export const neuroScenes: Record<string, Scene> = {
     text: '…그래. 뭐, 어쩔 수 없지. …결국에는 나중에 같이 먹게 될 것 같은 느낌이 드는 건 기분 탓이겠지.',
     next: 'neuro_corridor',
   },
-
-  // ─── 복도 (거절 후) ──────────────────────────────────────────────
   neuro_corridor: {
     id: 'neuro_corridor',
     background: 'corridor',
@@ -155,8 +151,6 @@ export const neuroScenes: Record<string, Scene> = {
     next: 'neuro_rooftop',
     affectionDelta: 5,
   },
-
-  // ─── 옥상 ────────────────────────────────────────────────────────
   neuro_rooftop: {
     id: 'neuro_rooftop',
     background: 'rooftop',
@@ -191,7 +185,6 @@ export const neuroScenes: Record<string, Scene> = {
       { text: '"너 같은 애가 있어서 다행이야."', next: 'neuro_roof_c', affectionDelta: 20 },
     ],
   },
-
   neuro_roof_a: {
     id: 'neuro_roof_a',
     background: 'rooftop',
@@ -209,7 +202,6 @@ export const neuroScenes: Record<string, Scene> = {
     text: '그래서! 내가 먼저 말 건 거야. 이게 왜 중요하냐면— CSR에서도 제일 중요한 게 S, 사회(Social)잖아. 먼저 다가가야 연결이 되니까!',
     next: 'neuro_evening',
   },
-
   neuro_roof_b: {
     id: 'neuro_roof_b',
     background: 'rooftop',
@@ -218,7 +210,6 @@ export const neuroScenes: Record<string, Scene> = {
     text: '거짓말. 눈빛이 달랐거든. 뭐, 상관없어— 결국에는 내가 말 걸었으니까 이제 이해관계자야, 너는.',
     next: 'neuro_evening',
   },
-
   neuro_roof_c: {
     id: 'neuro_roof_c',
     background: 'rooftop',
@@ -228,8 +219,6 @@ export const neuroScenes: Record<string, Scene> = {
     next: 'neuro_evening',
     affectionDelta: 5,
   },
-
-  // ─── 저녁 무렵 ───────────────────────────────────────────────────
   neuro_evening: {
     id: 'neuro_evening',
     background: 'rooftop',
@@ -256,7 +245,6 @@ export const neuroScenes: Record<string, Scene> = {
       { text: '"갑자기 왜 그래."', next: 'neuro_end_c', affectionDelta: 5 },
     ],
   },
-
   neuro_end_a: {
     id: 'neuro_end_a',
     background: 'rooftop',
@@ -283,8 +271,6 @@ export const neuroScenes: Record<string, Scene> = {
     text: '흥— 솔직한 거 좋아하면서. G(지배구조)처럼 투명하게 말해봐. 다음엔 네가 먼저야.',
     next: 'neuro_ending',
   },
-
-  // ─── 엔딩 ────────────────────────────────────────────────────────
   neuro_ending: {
     id: 'neuro_ending',
     background: 'rooftop',
@@ -305,6 +291,598 @@ export const neuroScenes: Record<string, Scene> = {
     background: 'black',
     speaker: '나레이터',
     text: '첫 번째 날이 저물었다.\n\n— Chapter 1 END —',
-    next: 'neuro_ending_03',
+    next: 'neuro_ch2_intro',
+  },
+
+  // ═══════════════════════════════════════════════════
+  //  CHAPTER 2 — 동아리 견학
+  // ═══════════════════════════════════════════════════
+  neuro_ch2_intro: {
+    id: 'neuro_ch2_intro',
+    background: 'black',
+    speaker: '나레이터',
+    text: '— Chapter 2 : 동아리 견학 —',
+    next: 'neuro_ch2_01',
+  },
+  neuro_ch2_01: {
+    id: 'neuro_ch2_01',
+    background: 'corridor',
+    speaker: '나레이터',
+    text: '다음날 아침. 등교하자마자 복도에서 뉴로우와 눈이 마주쳤다.',
+    next: 'neuro_ch2_02',
+  },
+  neuro_ch2_02: {
+    id: 'neuro_ch2_02',
+    background: 'corridor',
+    speaker: '뉴로우',
+    expression: 'happy',
+    text: '야야야!! 왔다!! 나 어제부터 기다렸어— 오늘 방과 후에 우리 동아리 구경 안 할래?! CSR 실제로 어떻게 하는지 보여줄게!!',
+    next: 'neuro_ch2_choice_01',
+  },
+  neuro_ch2_choice_01: {
+    id: 'neuro_ch2_choice_01',
+    background: 'corridor',
+    speaker: '나레이터',
+    text: '어떻게 대답할까?',
+    choices: [
+      { text: '"좋아, 가볼게."', next: 'neuro_ch2_yes', affectionDelta: 15 },
+      { text: '"CSR 동아리가 뭘 하는 건데?"', next: 'neuro_ch2_ask', affectionDelta: 10 },
+      { text: '"오늘은 좀 바빠서…"', next: 'neuro_ch2_no', affectionDelta: -5 },
+    ],
+  },
+  neuro_ch2_yes: {
+    id: 'neuro_ch2_yes',
+    background: 'corridor',
+    speaker: '뉴로우',
+    expression: 'happy',
+    text: '진짜?! 오오!! 완전 잘 됐다— 우리 동아리 부원들한테도 소개해줄게! 이해관계자가 늘수록 활동이 빛나거든!!',
+    next: 'neuro_ch2_room',
+    affectionDelta: 5,
+  },
+  neuro_ch2_ask: {
+    id: 'neuro_ch2_ask',
+    background: 'corridor',
+    speaker: '뉴로우',
+    expression: 'happy',
+    text: '오오! 물어봐줬어!! E(환경), S(사회), G(지배구조)— ESG 세 가지를 학교에서 실천하는 거야! 폐지 수거, 봉사활동, 회의록 공개까지!! 직접 보면 더 빨리 이해해!!',
+    next: 'neuro_ch2_room',
+    affectionDelta: 5,
+  },
+  neuro_ch2_no: {
+    id: 'neuro_ch2_no',
+    background: 'corridor',
+    speaker: '뉴로우',
+    expression: 'sad',
+    text: '…그래. 뭐, 억지로는 안 되는 거 알아. CSR에서도 자발적 참여가 핵심이니까— …근데 아쉽다.',
+    next: 'neuro_ch2_room',
+  },
+  neuro_ch2_room: {
+    id: 'neuro_ch2_room',
+    background: 'classroom',
+    speaker: '나레이터',
+    text: '방과 후, 동아리 방. 벽면 가득 활동 사진과 포스터가 붙어 있었다.',
+    next: 'neuro_ch2_03',
+  },
+  neuro_ch2_03: {
+    id: 'neuro_ch2_03',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'happy',
+    text: '짜잔— 여기야! 어때?! 우리가 직접 만든 업사이클링 소품들도 있고, 저 포스터는 작년 봉사활동 사진이야!',
+    next: 'neuro_ch2_04',
+  },
+  neuro_ch2_04: {
+    id: 'neuro_ch2_04',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'normal',
+    text: '있잖아— 사실 처음엔 나도 CSR이 그냥 착한 척인 줄 알았어. 근데 공부하다 보니까, 이게 진짜 세상을 바꾸는 방법이더라고.',
+    next: 'neuro_ch2_choice_02',
+  },
+  neuro_ch2_choice_02: {
+    id: 'neuro_ch2_choice_02',
+    background: 'classroom',
+    speaker: '나레이터',
+    text: '뭐라고 반응할까?',
+    choices: [
+      { text: '"너 그거 진심으로 하는구나."', next: 'neuro_ch2_05a', affectionDelta: 20 },
+      { text: '"학교에서도 그런 게 가능해?"', next: 'neuro_ch2_05b', affectionDelta: 10 },
+    ],
+  },
+  neuro_ch2_05a: {
+    id: 'neuro_ch2_05a',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'embarrassed',
+    text: '…어?! 그, 그렇게 보였어?! 당연히 진심이지!! …야, 왜 그렇게 말하면 쑥스럽냐고. 100번 들어도 직접 들으면 매번 새롭다고!!',
+    next: 'neuro_ch2_end',
+    affectionDelta: 10,
+  },
+  neuro_ch2_05b: {
+    id: 'neuro_ch2_05b',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'happy',
+    text: '가능하고말고!! 학교가 제일 좋은 연습 공간이야— S(사회) 활동은 가장 가까운 커뮤니티에서 시작하는 거거든!! 어떤 느낌인지 직접 해봐야 알지 않겠어?!',
+    next: 'neuro_ch2_end',
+    affectionDelta: 5,
+  },
+  neuro_ch2_end: {
+    id: 'neuro_ch2_end',
+    background: 'classroom',
+    speaker: '나레이터',
+    text: '어느 순간 동아리 방에 나 혼자와 뉴로우만 남아 있었다.',
+    next: 'neuro_ch2_end_02',
+  },
+  neuro_ch2_end_02: {
+    id: 'neuro_ch2_end_02',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'shy',
+    text: '…있잖아. 오늘 와줘서 고마워. 진짜로. 우리 활동 관심 갖는 사람 별로 없거든— 근데 너는 눈빛이 달랐어.',
+    next: 'neuro_ch2_end_03',
+  },
+  neuro_ch2_end_03: {
+    id: 'neuro_ch2_end_03',
+    background: 'black',
+    speaker: '나레이터',
+    text: '뉴로우의 진심이 조금씩 보이기 시작했다.\n\n— Chapter 2 END —',
+    next: 'neuro_ch3_intro',
+  },
+
+  // ═══════════════════════════════════════════════════
+  //  CHAPTER 3 — 봉사활동 하루
+  // ═══════════════════════════════════════════════════
+  neuro_ch3_intro: {
+    id: 'neuro_ch3_intro',
+    background: 'black',
+    speaker: '나레이터',
+    text: '— Chapter 3 : 봉사활동 하루 —',
+    next: 'neuro_ch3_01',
+  },
+  neuro_ch3_01: {
+    id: 'neuro_ch3_01',
+    background: 'corridor',
+    speaker: '나레이터',
+    text: '주말 아침. 문자가 왔다.',
+    next: 'neuro_ch3_02',
+  },
+  neuro_ch3_02: {
+    id: 'neuro_ch3_02',
+    background: 'corridor',
+    speaker: '뉴로우',
+    expression: 'happy',
+    text: '「야야야!! 오늘 우리 동아리 봉사활동 날인데— 혹시 같이 안 할래?! 공원 환경 정화 활동이야!! 직접 해보면 E(환경) 느낌 바로 와!!」',
+    next: 'neuro_ch3_choice_01',
+  },
+  neuro_ch3_choice_01: {
+    id: 'neuro_ch3_choice_01',
+    background: 'corridor',
+    speaker: '나레이터',
+    text: '어떻게 할까?',
+    choices: [
+      { text: '참여하겠다고 답장한다.', next: 'neuro_ch3_go', affectionDelta: 20 },
+      { text: '고민하다가 결국 간다.', next: 'neuro_ch3_go', affectionDelta: 10 },
+    ],
+  },
+  neuro_ch3_go: {
+    id: 'neuro_ch3_go',
+    background: 'park',
+    speaker: '나레이터',
+    text: '공원. 뉴로우는 이미 장갑을 끼고 쓰레기봉투를 들고 있었다.',
+    next: 'neuro_ch3_03',
+  },
+  neuro_ch3_03: {
+    id: 'neuro_ch3_03',
+    background: 'park',
+    speaker: '뉴로우',
+    expression: 'happy',
+    text: '왔다왔다!! 자— 이게 실전이야! 봐봐, 직접 해보니까 느낌 오지?! 환경 활동은 몸으로 익혀야 해!!',
+    next: 'neuro_ch3_04',
+  },
+  neuro_ch3_04: {
+    id: 'neuro_ch3_04',
+    background: 'park',
+    speaker: '나레이터',
+    text: '둘이 나란히 쓰레기를 줍기 시작했다. 뉴로우는 쉬지 않고 떠들었다.',
+    next: 'neuro_ch3_05',
+  },
+  neuro_ch3_05: {
+    id: 'neuro_ch3_05',
+    background: 'park',
+    speaker: '뉴로우',
+    expression: 'normal',
+    text: '있잖아— 지속가능성이라는 말 알아? 지금 당장만 생각하지 않고, 미래 세대도 쓸 수 있게 남겨두는 거야. 이 공원도 그런 거지.',
+    next: 'neuro_ch3_06',
+  },
+  neuro_ch3_06: {
+    id: 'neuro_ch3_06',
+    background: 'park',
+    speaker: '뉴로우',
+    expression: 'shy',
+    text: '…나는 사람 관계도 그래야 한다고 생각해. 지속가능하게. 오래 가는 관계.',
+    next: 'neuro_ch3_choice_02',
+  },
+  neuro_ch3_choice_02: {
+    id: 'neuro_ch3_choice_02',
+    background: 'park',
+    speaker: '나레이터',
+    text: '뭐라고 할까?',
+    choices: [
+      { text: '"나도 그런 관계 원해."', next: 'neuro_ch3_07a', affectionDelta: 25 },
+      { text: '"갑자기 철학자 됐네."', next: 'neuro_ch3_07b', affectionDelta: 10 },
+    ],
+  },
+  neuro_ch3_07a: {
+    id: 'neuro_ch3_07a',
+    background: 'park',
+    speaker: '뉴로우',
+    expression: 'embarrassed',
+    text: '…어?! 야— 그렇게 바로 말하면 어떡해!! 심장이 터질 것 같잖아!! …어, 어떤 느낌인지 이제 알겠다, 나도!!',
+    next: 'neuro_ch3_end',
+    affectionDelta: 10,
+  },
+  neuro_ch3_07b: {
+    id: 'neuro_ch3_07b',
+    background: 'park',
+    speaker: '뉴로우',
+    expression: 'smug',
+    text: '철학이라기보다 CSR이지!! …근데 뭔가 쑥스럽게 말했나. 머릿속으로만 생각하다가 입 밖에 낸 거라서.',
+    next: 'neuro_ch3_end',
+    affectionDelta: 5,
+  },
+  neuro_ch3_end: {
+    id: 'neuro_ch3_end',
+    background: 'park',
+    speaker: '나레이터',
+    text: '봉사활동이 끝났다. 뉴로우는 땀을 닦으며 웃었다.',
+    next: 'neuro_ch3_end_02',
+  },
+  neuro_ch3_end_02: {
+    id: 'neuro_ch3_end_02',
+    background: 'park',
+    speaker: '뉴로우',
+    expression: 'happy',
+    text: '수고했어!! 한 번만 해보고 끝내면 안 돼— 다음 달에도 있거든. …같이 또 올 거지?',
+    next: 'neuro_ch3_end_03',
+  },
+  neuro_ch3_end_03: {
+    id: 'neuro_ch3_end_03',
+    background: 'black',
+    speaker: '나레이터',
+    text: '나는 자연스럽게 고개를 끄덕였다.\n\n— Chapter 3 END —',
+    next: 'neuro_ch4_intro',
+  },
+
+  // ═══════════════════════════════════════════════════
+  //  CHAPTER 4 — 발표 위기
+  // ═══════════════════════════════════════════════════
+  neuro_ch4_intro: {
+    id: 'neuro_ch4_intro',
+    background: 'black',
+    speaker: '나레이터',
+    text: '— Chapter 4 : 발표 위기 —',
+    next: 'neuro_ch4_01',
+  },
+  neuro_ch4_01: {
+    id: 'neuro_ch4_01',
+    background: 'classroom',
+    speaker: '나레이터',
+    text: '동아리 발표회 전날. 컴퓨터실에서 뉴로우가 화면을 멍하니 보고 있었다.',
+    next: 'neuro_ch4_02',
+  },
+  neuro_ch4_02: {
+    id: 'neuro_ch4_02',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'sad',
+    text: '…어, 왔어. …사실 큰일 났어. 발표 자료 파일이 날아갔어. G(지배구조) 파트 전부.',
+    next: 'neuro_ch4_03',
+  },
+  neuro_ch4_03: {
+    id: 'neuro_ch4_03',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'sad',
+    text: '내일 발표인데… 처음부터 다시 만들어야 해. 나 혼자는 오늘 밤 안에 못 할 것 같아.',
+    next: 'neuro_ch4_choice_01',
+  },
+  neuro_ch4_choice_01: {
+    id: 'neuro_ch4_choice_01',
+    background: 'classroom',
+    speaker: '나레이터',
+    text: '어떻게 할까?',
+    choices: [
+      { text: '"같이 만들자. 내가 도와줄게."', next: 'neuro_ch4_help', affectionDelta: 25 },
+      { text: '"G(지배구조) 파트가 뭔지 설명해봐. 같이 생각해보자."', next: 'neuro_ch4_help', affectionDelta: 20 },
+    ],
+  },
+  neuro_ch4_help: {
+    id: 'neuro_ch4_help',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'surprised',
+    text: '…진짜?! 도와줄 거야?! 야— 야야야!! 완전 다행이다!! 이해관계자가 이럴 때 빛나는 거야!!',
+    next: 'neuro_ch4_work',
+    affectionDelta: 5,
+  },
+  neuro_ch4_work: {
+    id: 'neuro_ch4_work',
+    background: 'classroom',
+    speaker: '나레이터',
+    text: '밤늦게까지 둘이 자료를 만들었다. 뉴로우는 빠르게 설명하고 나는 받아쳤다.',
+    next: 'neuro_ch4_05',
+  },
+  neuro_ch4_05: {
+    id: 'neuro_ch4_05',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'normal',
+    text: 'G는 Governance야— 투명한 의사결정 구조. 쉽게 말하면 규칙을 공정하게 만들고 지키는 거. …우리 사이도 그래야 한다고 생각해.',
+    next: 'neuro_ch4_06',
+  },
+  neuro_ch4_06: {
+    id: 'neuro_ch4_06',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'shy',
+    text: '…있잖아. 나 원래 이런 거 혼자 다 하는 스타일이거든. 근데 오늘은 달랐어. …고마워.',
+    next: 'neuro_ch4_choice_02',
+  },
+  neuro_ch4_choice_02: {
+    id: 'neuro_ch4_choice_02',
+    background: 'classroom',
+    speaker: '나레이터',
+    text: '어떻게 반응할까?',
+    choices: [
+      { text: '"당연하지. 또 불러."', next: 'neuro_ch4_07a', affectionDelta: 20 },
+      { text: '조용히 웃어 보인다.', next: 'neuro_ch4_07b', affectionDelta: 15 },
+    ],
+  },
+  neuro_ch4_07a: {
+    id: 'neuro_ch4_07a',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'embarrassed',
+    text: '…어?! "당연하지"라고?! 야— 야야야!! 그 말이 왜 이렇게 심장에 박히냐고!! 반복 연습이 중요하다고는 했지만 이건 너무해!!',
+    next: 'neuro_ch4_end',
+    affectionDelta: 10,
+  },
+  neuro_ch4_07b: {
+    id: 'neuro_ch4_07b',
+    background: 'classroom',
+    speaker: '뉴로우',
+    expression: 'shy',
+    text: '…웃기만 해? 직접 말해봐야 알지 않겠어? …뭐, 그 웃음도 나쁘진 않긴 하지만.',
+    next: 'neuro_ch4_end',
+    affectionDelta: 5,
+  },
+  neuro_ch4_end: {
+    id: 'neuro_ch4_end',
+    background: 'classroom',
+    speaker: '나레이터',
+    text: '자정이 넘어 자료가 완성됐다. 뉴로우는 저장 버튼을 누르고 크게 숨을 내쉬었다.',
+    next: 'neuro_ch4_end_02',
+  },
+  neuro_ch4_end_02: {
+    id: 'neuro_ch4_end_02',
+    background: 'black',
+    speaker: '나레이터',
+    text: '내일 발표는 잘 될 것 같았다. 그보다— 뭔가 다른 게 시작된 것 같았다.\n\n— Chapter 4 END —',
+    next: 'neuro_ch5_intro',
+  },
+
+  // ═══════════════════════════════════════════════════
+  //  CHAPTER 5 — 오해와 진심
+  // ═══════════════════════════════════════════════════
+  neuro_ch5_intro: {
+    id: 'neuro_ch5_intro',
+    background: 'black',
+    speaker: '나레이터',
+    text: '— Chapter 5 : 오해와 진심 —',
+    next: 'neuro_ch5_01',
+  },
+  neuro_ch5_01: {
+    id: 'neuro_ch5_01',
+    background: 'corridor',
+    speaker: '나레이터',
+    text: '발표회 다음날. 뉴로우가 보이지 않았다. 복도에서 동아리 부원이 말을 걸었다.',
+    next: 'neuro_ch5_02',
+  },
+  neuro_ch5_02: {
+    id: 'neuro_ch5_02',
+    background: 'corridor',
+    speaker: '선생님',
+    expression: 'normal',
+    text: '혹시 뉴로우 찾아요? 오늘 결석이에요. 발표 끝나고 쓰러졌대요— 과로래요.',
+    next: 'neuro_ch5_choice_01',
+  },
+  neuro_ch5_choice_01: {
+    id: 'neuro_ch5_choice_01',
+    background: 'corridor',
+    speaker: '나레이터',
+    text: '어떻게 할까?',
+    choices: [
+      { text: '문자를 보낸다. "괜찮아?"', next: 'neuro_ch5_text', affectionDelta: 15 },
+      { text: '직접 찾아간다.', next: 'neuro_ch5_visit', affectionDelta: 25 },
+    ],
+  },
+  neuro_ch5_text: {
+    id: 'neuro_ch5_text',
+    background: 'corridor',
+    speaker: '뉴로우',
+    expression: 'sad',
+    text: '「…괜찮아. 걱정하지 마. 나는 원래 이래— 혼자서 다 하다가 이렇게 되는 거야. 습관이야.」',
+    next: 'neuro_ch5_03',
+    affectionDelta: 5,
+  },
+  neuro_ch5_visit: {
+    id: 'neuro_ch5_visit',
+    background: 'home',
+    speaker: '뉴로우',
+    expression: 'surprised',
+    text: '…어?! 왜 여기까지 온 거야?! 말도 없이!! …아, 근데 왔으면 들어와. 신발 벗고.',
+    next: 'neuro_ch5_03',
+    affectionDelta: 15,
+  },
+  neuro_ch5_03: {
+    id: 'neuro_ch5_03',
+    background: 'home',
+    speaker: '뉴로우',
+    expression: 'sad',
+    text: '…사실 발표 끝나고 좀 울었어. 잘 됐는데 왜 눈물이 나는지 모르겠더라고. 피곤해서 그런가.',
+    next: 'neuro_ch5_04',
+  },
+  neuro_ch5_04: {
+    id: 'neuro_ch5_04',
+    background: 'home',
+    speaker: '뉴로우',
+    expression: 'normal',
+    text: '있잖아— 나 사실 겁 많아. 활발해 보이는 거 알아. 근데 CSR 얘기 할 때 말고는 자신 없을 때 많아.',
+    next: 'neuro_ch5_choice_02',
+  },
+  neuro_ch5_choice_02: {
+    id: 'neuro_ch5_choice_02',
+    background: 'home',
+    speaker: '나레이터',
+    text: '뭐라고 할까?',
+    choices: [
+      { text: '"그래도 돼. 나 있잖아."', next: 'neuro_ch5_05a', affectionDelta: 30 },
+      { text: '"나도 그래. 같이 겁 먹자."', next: 'neuro_ch5_05b', affectionDelta: 25 },
+    ],
+  },
+  neuro_ch5_05a: {
+    id: 'neuro_ch5_05a',
+    background: 'home',
+    speaker: '뉴로우',
+    expression: 'embarrassed',
+    text: '…어?! 야— 야야야!! 그 말 지금 진심이야?! 심장이 E(환경)처럼 뜨겁잖아!! 이건 CSR 교과서에도 없는 느낌이야!!',
+    next: 'neuro_ch5_end',
+    affectionDelta: 10,
+  },
+  neuro_ch5_05b: {
+    id: 'neuro_ch5_05b',
+    background: 'home',
+    speaker: '뉴로우',
+    expression: 'shy',
+    text: '…같이 겁 먹자고? …하— 그 말이 왜 이렇게 따뜻해. 지속가능한 관계가 이런 거구나. 직접 와봐야 아는 거였어.',
+    next: 'neuro_ch5_end',
+    affectionDelta: 10,
+  },
+  neuro_ch5_end: {
+    id: 'neuro_ch5_end',
+    background: 'home',
+    speaker: '나레이터',
+    text: '창밖으로 저녁이 내려앉고 있었다. 뉴로우는 처음으로 조용히 웃었다.',
+    next: 'neuro_ch5_end_02',
+  },
+  neuro_ch5_end_02: {
+    id: 'neuro_ch5_end_02',
+    background: 'black',
+    speaker: '나레이터',
+    text: '뉴로우의 또 다른 면을 보았다.\n\n— Chapter 5 END —',
+    next: 'neuro_ch6_intro',
+  },
+
+  // ═══════════════════════════════════════════════════
+  //  CHAPTER 6 — 고백
+  // ═══════════════════════════════════════════════════
+  neuro_ch6_intro: {
+    id: 'neuro_ch6_intro',
+    background: 'black',
+    speaker: '나레이터',
+    text: '— Chapter 6 : 고백 —',
+    next: 'neuro_ch6_01',
+  },
+  neuro_ch6_01: {
+    id: 'neuro_ch6_01',
+    background: 'rooftop',
+    speaker: '나레이터',
+    text: '일주일 후, 방과 후 옥상. 뉴로우가 먼저 문자를 보냈다.',
+    next: 'neuro_ch6_02',
+  },
+  neuro_ch6_02: {
+    id: 'neuro_ch6_02',
+    background: 'rooftop',
+    speaker: '뉴로우',
+    expression: 'normal',
+    text: '…왔어. 저기— 할 말 있어서 불렀어. 긴장하지 마. 아, 나는 엄청 긴장하고 있지만.',
+    next: 'neuro_ch6_03',
+  },
+  neuro_ch6_03: {
+    id: 'neuro_ch6_03',
+    background: 'rooftop',
+    speaker: '뉴로우',
+    expression: 'embarrassed',
+    text: '있잖아— CSR에서 S가 뭔지 알지? 사회적 연결. 나는 그게 제일 중요하다고 생각했거든. 근데 요즘은 그 중에서도 한 사람이 특히 중요해졌어.',
+    next: 'neuro_ch6_04',
+  },
+  neuro_ch6_04: {
+    id: 'neuro_ch6_04',
+    background: 'rooftop',
+    speaker: '뉴로우',
+    expression: 'shy',
+    text: '…그게 너야. 머릿속으로만 생각했는데 직접 말 안 하면 절대 모를 것 같아서— 좋아해. 진짜로.',
+    next: 'neuro_ch6_choice',
+  },
+  neuro_ch6_choice: {
+    id: 'neuro_ch6_choice',
+    background: 'rooftop',
+    speaker: '나레이터',
+    text: '어떻게 대답할까?',
+    choices: [
+      { text: '"나도 좋아해."', next: 'neuro_ch6_05a', affectionDelta: 30 },
+      { text: '뉴로우 손을 잡는다.', next: 'neuro_ch6_05b', affectionDelta: 30 },
+      { text: '"알고 있었어."', next: 'neuro_ch6_05c', affectionDelta: 20 },
+    ],
+  },
+  neuro_ch6_05a: {
+    id: 'neuro_ch6_05a',
+    background: 'rooftop',
+    speaker: '뉴로우',
+    expression: 'embarrassed',
+    text: '…어?! 야— 야야야야야!! 심장 터진다 진짜로!! 100번 연습해도 직접 들으면 다르다는 걸 몸으로 증명하고 있잖아 지금!!',
+    next: 'neuro_ch6_end',
+    affectionDelta: 10,
+  },
+  neuro_ch6_05b: {
+    id: 'neuro_ch6_05b',
+    background: 'rooftop',
+    speaker: '뉴로우',
+    expression: 'embarrassed',
+    text: '…어?!! 손?! 갑자기?! 야— 말로만 하지 말고 직접 해봐, 라고 내가 말하긴 했는데 이렇게 바로 올 줄은!!',
+    next: 'neuro_ch6_end',
+    affectionDelta: 15,
+  },
+  neuro_ch6_05c: {
+    id: 'neuro_ch6_05c',
+    background: 'rooftop',
+    speaker: '뉴로우',
+    expression: 'surprised',
+    text: '…알고 있었다고?! 야— 그럼 진작에 말해줬어야지!! G(지배구조)처럼 투명하게!! …아, 근데 나도 말 늦게 했구나. 뭐, 됐어.',
+    next: 'neuro_ch6_end',
+    affectionDelta: 10,
+  },
+  neuro_ch6_end: {
+    id: 'neuro_ch6_end',
+    background: 'rooftop',
+    speaker: '나레이터',
+    text: '뉴로우가 크게 웃었다. 언제나처럼 시끄럽고, 언제나처럼 눈부셨다.',
+    next: 'neuro_ch6_end_02',
+  },
+  neuro_ch6_end_02: {
+    id: 'neuro_ch6_end_02',
+    background: 'rooftop',
+    speaker: '뉴로우',
+    expression: 'happy',
+    text: '자 그러면 이제 우리가 함께하게 되는 거야— E(환경)도, S(사회)도, G(지배구조)도 같이!! 지속가능하게!!',
+    next: 'neuro_ch6_end_03',
+  },
+  neuro_ch6_end_03: {
+    id: 'neuro_ch6_end_03',
+    background: 'black',
+    speaker: '나레이터',
+    text: '우리는 그렇게 지속가능한 관계를 시작했다.\n\n— Chapter 6 END —\n— FIN —',
+    // next 없음 → 엔딩
   },
 }
