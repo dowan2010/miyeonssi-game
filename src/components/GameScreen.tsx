@@ -139,6 +139,7 @@ export default function GameScreen({ onMenu }: Props) {
   const bgStyle = BG_STYLE[scene.background] ?? BG_STYLE.black
   const bgOverlay = BG_OVERLAY[scene.background] ?? ''
   const showCharacter = scene.speaker === '김영한' || scene.speaker === '뉴로우'
+  const showAffection = !scene.hideAffection
   const hasChoices = !!(scene.choices && scene.choices.length > 0)
   const hasContinue = !hasChoices && !!scene.next
   const isChapterEnd = textDone && !hasChoices && !scene.next
@@ -153,20 +154,20 @@ export default function GameScreen({ onMenu }: Props) {
         {scene.background !== 'black' && BG_LABEL[scene.background]}
       </div>
 
-      {/* 호감도 / 이해도 미터 */}
-      <AffectionMeter affection={affection} character={selectedCharacter} />
+      {/* 호감도 / 이해도 미터 — 중요 장면에서는 숨김 */}
+      {showAffection && <AffectionMeter affection={affection} character={selectedCharacter} />}
 
       {/* 우측 상단 버튼 */}
       <div className="absolute top-12 right-4 flex gap-3 items-center">
         <button
           onClick={() => cloudSave()}
-          className="text-white/40 text-xs hover:text-white/80 transition-colors"
+          className="text-white/70 text-xs hover:text-white transition-colors drop-shadow"
         >
           💾
         </button>
         <button
           onClick={async () => { await cloudSave(); onMenu() }}
-          className="text-white/40 text-xs hover:text-white/80 transition-colors"
+          className="text-white/70 text-xs hover:text-white transition-colors drop-shadow"
         >
           ☰ 메뉴
         </button>
@@ -174,7 +175,7 @@ export default function GameScreen({ onMenu }: Props) {
 
       {/* 유저 이름 */}
       {user && (
-        <div className="absolute top-12 left-4 text-white/35 text-xs select-none">
+        <div className="absolute top-12 left-4 text-white/65 text-xs select-none drop-shadow">
           {user.name}
         </div>
       )}

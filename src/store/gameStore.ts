@@ -53,7 +53,8 @@ export const useGameStore = create<GameStore>()(
       goToScene: (id, affectionDelta = 0) =>
         set((s) => ({
           currentSceneId: id,
-          affection: Math.min(100, Math.max(0, s.affection + affectionDelta)),
+          // 호감도 증가 속도 조절 (×0.35 — 선택 누적이 더 의미 있도록)
+          affection: Math.min(100, Math.max(0, s.affection + Math.round(affectionDelta * 0.35))),
         })),
 
       setFlag: (key, value) =>

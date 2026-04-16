@@ -830,6 +830,7 @@ export const neuroScenes: Record<string, Scene> = {
     background: 'rooftop',
     speaker: '나레이터',
     text: '어떻게 대답할까?',
+    hideAffection: true,
     choices: [
       { text: '"나도 좋아해."', next: 'neuro_ch6_05a', affectionDelta: 30 },
       { text: '뉴로우 손을 잡는다.', next: 'neuro_ch6_05b', affectionDelta: 30 },

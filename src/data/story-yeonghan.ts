@@ -879,6 +879,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'rooftop',
     speaker: '나레이터',
     text: '어떻게 대답할까?',
+    hideAffection: true,
     choices: [
       { text: '"나도 좋아해."', next: 'ch6_05a', affectionDelta: 30 },
       { text: '아무 말 없이 손을 잡는다.', next: 'ch6_05b', affectionDelta: 30 },
@@ -1301,6 +1302,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'park',
     speaker: '나레이터',
     text: '어떻게 할까?',
+    hideAffection: true,
     choices: [
       { text: '그대로 가만히 있는다.', next: 'ch9_kiss_a', affectionDelta: 20 },
       { text: '김영한 이름을 부른다.', next: 'ch9_kiss_b', affectionDelta: 25 },
@@ -1334,6 +1336,7 @@ export const yeonghanScenes: Record<string, Scene> = {
     background: 'park',
     speaker: '나레이터',
     text: '벚꽃이 흩날렸다. 짧고, 조용했다.',
+    hideAffection: true,
     next: 'ch9_after',
   },
   ch9_after: {

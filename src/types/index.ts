@@ -72,6 +72,7 @@ export interface Scene {
   choices?: Choice[]
   next?: string
   affectionDelta?: number
+  hideAffection?: boolean  // 고백/키스 등 중요 장면에서 호감도 숨김
 }
 
 export interface SaveData {
