@@ -16,6 +16,7 @@ import pool from './db.js'
 import passport, { configureAuth } from './auth.js'
 import type { AppUser } from './auth.js'
 import saveRouter from './routes/save.js'
+import { botBlock, rateLimit } from './middleware/botBlock.js'
 
 // dotenv 로딩 이후에 Passport 전략 초기화
 configureAuth()
@@ -29,6 +30,15 @@ const CLIENT_URL = process.env.CLIENT_URL ?? 'http://localhost:5173'
 
 // Render 등 리버스 프록시 뒤에서 HTTPS 세션 쿠키가 정상 동작하도록
 app.set('trust proxy', 1)
+
+// ── 보안 미들웨어 ────────────────────────────────────────────────
+app.use(rateLimit)   // IP당 분당 120 요청 제한
+app.use(botBlock)    // 크롤러/스크래퍼 차단
+
+// robots.txt — 모든 크롤러 색인 거부
+app.get('/robots.txt', (_req, res) => {
+  res.type('text/plain').send('User-agent: *\nDisallow: /')
+})
 
 app.use(cors({ origin: CLIENT_URL, credentials: true }))
 app.use(express.json())
